@@ -1,65 +1,77 @@
-.news-list{
-  padding: 0 10px;
-  .item{
-    display: flex;
-    height: 30px;
-    line-height: 30px;
-    background-color: #fff;
-    font-size: 14px;
-    border-bottom: 1px solid #f5f5f5;
-    margin: 10px 0;
-    .avatar{
-      img {
-        width: 28px;
-        height: auto;
-        border-radius: 5px;
-      }
-    }
-    .title{
-      height: 100%;
-      width: 80%;
-      overflow: hidden;
-      word-break: keep-all;
-      white-space: nowrap;
-      text-overflow:ellipsis;
-    }
-    .items{
-      a {
-        text-decoration: none;
-
-        &:link{
-          color: #333;
-        }
-        &:visited{
-          color: #C67171;
-        }
-        &:hover,
-        &:active{
-          color: #999;
+@media screen and (max-width: 600px){
+  .news-list{
+    padding: 0 10px;
+    .item{
+      display: flex;
+      height: 30px;
+      line-height: 30px;
+      background-color: #fff;
+      font-size: 14px;
+      border-bottom: 1px solid #f5f5f5;
+      margin: 10px 0;
+      .avatar{
+        img {
+          width: 28px;
+          height: auto;
+          border-radius: 5px;
         }
       }
-    }
+      .title{
+        height: 100%;
+        width: 80%;
+        overflow: hidden;
+        word-break: keep-all;
+        white-space: nowrap;
+        text-overflow:ellipsis;
+      }
+      .items{
+        a {
+          text-decoration: none;
 
+          &:link{
+            color: #333;
+          }
+          &:visited{
+            color: #C67171;
+          }
+          &:hover,
+          &:active{
+            color: #999;
+          }
+        }
+      }
+
+    }
   }
-}
-.more{
-  text-align: center;
-  font-size: 10px;
-  padding: 20px 0;
-}
-.artical-type{
-  .tab{
-    width: 30px;
-    padding: 2px 3px;
-    margin: 0 3px;
-    font-size: 8px;
+  .more{
     text-align: center;
-    color: #fff;
-    border-radius: 2px;
+    font-size: 10px;
+    padding: 20px 0;
   }
-  .top-tab{background-color: red;}
-  .share-tab{background-color: #42b983;}
-  .good-tab{background-color: #CD950C;}
-  .ask-tab{background-color: #999;}
-  .job-tab{background-color: #7A67EE;}
+  .artical-type{
+    .tab{
+      width: 30px;
+      padding: 2px 3px;
+      margin: 0 3px;
+      font-size: 8px;
+      text-align: center;
+      color: #fff;
+      border-radius: 2px;
+    }
+    .top-tab{background-color: red;}
+    .share-tab{background-color: #42b983;}
+    .good-tab{background-color: #CD950C;}
+    .ask-tab{background-color: #999;}
+    .job-tab{background-color: #7A67EE;}
+  }
+
+}
+
+@media screen and (min-width: 600px) {
+  .news-list{
+    .item{
+      background-color: #f5f5f5;
+      margin: 0 0 10px;
+    }
+  }
 }

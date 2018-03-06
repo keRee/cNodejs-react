@@ -11,8 +11,13 @@ $codeBg: #eee;
 $tabsBg: #f5f5f5;
 $tabsHeight: 40px;
 .box-content{
-  max-width: 980px;
+  max-width: 800px;
   margin: 0 auto;
+}
+@media screen and (min-width: 600px) {
+  .IndexTab {
+    visibility: hidden;
+  }
 }
 .IndexTab{
   position: fixed;
