@@ -41,6 +41,14 @@
     </br>3.23 [存取器](#accessors)
     </br>3.24 [事件](#events)
     </br>3.25 [jQuery](#jquery)
+  4. [Git代码库](#git)
+    </br>4.1 [代码日常管理](#4.1)
+    </br>4.2 [新功能协作开发流程](#4.2)
+  5. [公共文件](#public)
+    </br>5.1 [css](#5.1)
+    </br>5.2 [js库文件](#5.2)
+  6. [性能与优化](#performance)
+  7. [测试与发布](#test)
 
 
 <a name="html"></a>
@@ -74,32 +82,32 @@
   在一个复杂的页面中准确的描述代码块的功能；
 
   ```html
-  <!-- 司机信息 新增/编辑 s -->
+  <!-- 个人信息 新增/编辑 s -->
   <div class="content">
     
   </div>
-  <!-- 司机信息 新增/编辑 e -->
+  <!-- 个人信息 新增/编辑 e -->
   ```
 - [1.5](#1.5) <a name='1.5'></a>其他
 
-  - 保持尽可能简洁的html结构，减少冗余标签，提高页面性能
+  - 保持尽可能简洁的html结构，减少冗余标签，提高页面性能；
   - 嵌套的节点保持必要的缩进；
   - 自动闭合标签结尾不加 `/`；
   - 添加闭合标签；
 
 
-  **[⬆ 返回目录](#table-of-contents)**
+**[⬆ 返回目录](#table-of-contents)**
 
 <a name="css"></a>
 ## CSS
 
-[2.1](#2.1) <a name='2.1'></a>样式引入
+- [2.1](#2.1) <a name='2.1'></a>样式引入
 
   在`head`中使用`link`方式引入，尽量不使用`@import`方式；
 
   > 后者会等待样式完全加载完后才将样式渲染到页面，造成页面短时样式空白影响体验
 
-[2.2](#2.2) <a name='2.2'></a> `class`命名
+- [2.2](#2.2) <a name='2.2'></a> `class`命名
 
   - 名称小写，单词间使用中划线；
   - scss&less中变量、函数、混合用lowerCamelCase
@@ -127,7 +135,7 @@
 
   > 尽量不要取`banner`、`ad`、`download`等，可能会被某些浏览器误认为是广告而屏蔽；
 
-[2.3](#2.3) <a name='2.3'></a>属性顺序
+- [2.3](#2.3) <a name='2.3'></a>属性顺序
 
   - 位置属性(position, top, right, z-index, display, float等)
   - 大小(width, height, padding, margin)
@@ -137,7 +145,7 @@
 
   > css3不加厂商前缀的属性应放在有厂商前缀属性的后面
 
-[2.4](#2.4) <a name='2.4'></a>其他
+- [2.4](#2.4) <a name='2.4'></a>其他
 
   - 颜色： 16进制颜色用小写字母，能简写的用简写；
   - 选择器用小写字母；
@@ -149,6 +157,7 @@
   - 每个属性声明末尾加分号；
   - 保持必要的缩进；
   - 尽量少使用`inline style`；
+  - 样式重写时注意作用范围，避免污染其他页面
 
 
 **[⬆ 返回目录](#table-of-contents)**
@@ -156,21 +165,24 @@
  <a name="js"></a>
 ## JS
 
-  **文件引入**
+- **文件引入**
 
   除了必要的文件在`head`中引入，其他一律放在`body`标签之前引入；
 
   > 为提高首页加载速度，可根据项目采取动态加载或者按需加载的方式
 
-  JS编码规范
+  
+**[⬆ 返回目录](#table-of-contents)**
 
-  **用更合理的方式写 JavaScript**
+  
+  JS编码规范: **用更合理的方式写 JavaScript**
+
+  > 引自`Airbnb JavaScript Style`
+
 
   [Airbnb JavaScript Style Guide 中文](https://github.com/yuche/javascript/blob/master/README.md)
 
   [Airbnb JavaScript Style Guide 英文原版](https://github.com/airbnb/javascript/blob/master/README.md)
-
-**[⬆ 返回目录](#table-of-contents)**
 
 
 <a name="types"></a>
@@ -2027,25 +2039,214 @@
 
 **[⬆ 返回目录](#table-of-contents)**
 
-### GIT
+<a name="git"></a>
+## GIT
 
-### 公用文件
+- [4.1](#4.1) <a name='4.1'></a>代码日常管理
 
-#### css
+  - 每天更新项目代码
 
-#### js插件
+    > 防止太久不更新，出现很多的confilct
 
-#### 组件
+    ```js
+    git pull remote branchName
 
-### 项目提测
+    // or git fetch + git merge
+    git fetch remote branchName
+    git merge
+    ```
 
-#### 提测前准备
+  - 查看更新日志（特别关注个人负责的部分）
 
-#### 测试环境发布后验证
+    > 防止代码被覆盖修改
+    >
+    > 其实也通过阅读他人代码学习别人的长处
+
+    ```js
+    // 查看提交日志
+    git log
+
+    // or
+    git reflog
+    ```
+
+  - 代码提交前diff修改
+
+    > 确认修改片段
+
+    ```js
+    // 查看文件具体哪里有修改
+    // 所有文件
+    git diff
+
+    // 单文件
+    git diff path/to/your/fileName
+
+    // 与前一个版本对比
+    git diff head^
+    // 与前2个版本对比
+    git diff head~2
+    ```
+
+  - 有条件细化每一次commit，并填写准确的commit信息
+
+    > 有利于查看提交记录以及代码回滚
+
+    ```js
+    git commit -m "your commit message"
+    ```
+
+  - 谨慎处理confilct
+
+    > 重要代码片段找到相关提交者沟通处理，防止其他人代码丢失
+
+  - 确认push分支
+
+    > 防止分支混乱
+
+    ```js
+    git push remote branchName
+    ```
 
 
-### 项目发布
+**[⬆ 返回目录](#table-of-contents)**
 
-#### 发布前准备
 
-#### 正式环境发布后验证
+- [4.2](#4.2) <a name='4.2'></a>新功能协作开发流程
+
+
+  > 此流程适用于稳定项目中新功能开发
+  > 多人协作，为保证开发效率及新功能代码管理，
+  > 采用按功能`新建分支开发`的方式
+
+  - **新建：** 在稳定、干净的develop分支创建新分支
+
+    ```
+    git checkout -b newBranchName
+    ```
+
+    新分支命名：
+
+    > newBranchName = 主分支-开发人员-功能（需求）概述
+
+  - **开发：** 在newBranchName分支进行开发
+
+    add:
+
+    ```js
+    // 添加所有修改的文件
+    git add .
+
+    // or 单文件添加
+    git add path/to/your/fileName
+    ```
+
+    commit:
+    ```
+    git commit -m "write your commit message here"
+    ```
+
+    push：
+    ```
+    git push remote HEAD:newBranchName
+    ```
+
+  - **合并：** newBranchName分支开发的功能合并到develop分支
+
+    - 首先：切换到develop分支，并更新develop分支代码，确保其是最新代码
+
+      ```js
+      // 1 - 切换分支
+      git checkout develop
+
+      // 2 - 更新仓库代码
+      git pull remote develop
+      ```
+
+    - 第二步：合并newBranchName分支到develop分支
+
+      ```js
+      // 确保当前是在develop分支
+      git merge remote/newBranchName
+      ```
+
+    - 第三步：提交合并结果至远程develop仓库
+
+      > 此处若有conflict提示，可以先处理完冲突，然后依次执行`add` -> `commit` 操作
+
+      **提交**push(提交合并+解决conflict产生的所有更新)：
+
+      ```
+      git push remote HEAD:develop
+      ```
+
+  - **删除：** 开发完成，删除新增的分支
+
+    - 删除远程newBranchName分支
+      ```
+      git push remote :newBranchName
+      ```
+
+    - 删除本地newBranchName分支
+      ```
+      git branch -D newBranchName
+      ```
+> remote 为远程主机名，一般为 origin
+
+  [Git Documentation](https://git-scm.com/book/zh/v1/)
+
+
+**[⬆ 返回目录](#table-of-contents)**
+
+<a name="public"></a>
+## 公用文件
+
+- [5.1](#5.1) <a name='5.1'></a>css
+
+  - 基础公用css文件不可随意删除代码块；
+  - 重复使用的样式可在确认不会对既有样式造成影响的情况下进行添加；
+
+- [5.2](#5.2) <a name='5.2'></a>js库文件
+
+  - js库使用版本不随意变更，以免引起bug；
+  - 评估js库引用成本；
+
+    在使用项目进行工程化开发时，确认是否需要引入某个js库文件，引入则需要
+    将其信息写入`package.json`并确认是属于开发依赖还是生产依赖，此处
+    `npm install packageName`时加入`--save` or `--save-dev`命令,
+    则会在`package.json`中自动生产文件信息；
+  - 对常用的功能模块作封装，形成公共的基础工具库；
+ 
+
+**[⬆ 返回目录](#table-of-contents)**
+
+<a name="performance"></a>
+## 性能与优化
+
+  - 压缩优化图片，使用雪碧图，不要在html中缩放图片；
+  - 避免使用css表达式；
+  - css放在页面最上部，javascript放在页面最下面；
+  - 压缩资源文件，延迟非必要js文件的加载；
+  - 去掉重复的脚本文件；
+  - 最小化访问DOM
+    - 缓存访问过的元素引用；
+    - 在DOM树外更新节点，然后添加到DOM树；
+    - 避免用js实现固定布局；
+  - 具有复杂动画的元素绝对定位-脱离文档流，避免强烈的回流；
+  - 不使用iframe，据说开销最大的DOM元素；
+  - 使用事件委托，避免过多的DOM元素的事件绑定；
+  - 善用浏览器`Performance`工具；
+
+  > [Vue 风格指南](https://cn.vuejs.org/v2/style-guide/)
+
+
+**[⬆ 返回目录](#table-of-contents)**
+
+<a name="test"></a>
+## 测试与发布
+
+- 项目准备：高质量完成开发
+
+- 发布后验证
+
+**[⬆ 返回目录](#table-of-contents)**
