@@ -41,6 +41,8 @@
     </br>3.23 [存取器](#accessors)
     </br>3.24 [事件](#events)
     </br>3.25 [jQuery](#jquery)
+    </br>3.26 [文件引入](#importfile)
+    </br>3.27 [功能模块、数据注释](#datanote)
   4. [Git代码库](#git)
     </br>4.1 [代码日常管理](#4.1)
     </br>4.2 [新功能协作开发流程](#4.2)
@@ -2030,45 +2032,47 @@
   
 **[⬆ 返回目录](#table-of-contents)**
 
-  - **文件引入**
+<a name="importfile"></a>
+### 文件引入
 
     除了必要的文件在`head`中引入，其他一律放在`body`标签之前引入；
 
     > 为提高首页加载速度，可根据项目采取动态加载或者按需加载的方式
 
-  - **功能模块、数据注释**
+<a name="datanote"></a>
+### 功能模块、数据注释
 
-    - 一个功能模块的函数对其功能作适当的描述，以便维护；
-    - Data数据源注释，以便后期出现问题快速定位；
+  - 一个功能模块的函数对其功能作适当的描述，以便维护；
+  - Data数据源注释，以便后期出现问题快速定位；
 
-    ```js
-     // 一些可以自解释的命名可不再注释
-     // 但一些非常中性的命名则需适当给出注释，
-     // 或修改为更语义化的命名
-    export default {
-      name: 'module-name',
-      data () {
-        return {
-          name: '张三',   
-          phone: '13734567623',
-          num: 100,               // 个人购买数
-          totalNum: 3600          // 购买总数
-        }
+  ```js
+    // 一些可以自解释的命名可不再注释
+    // 但一些非常中性的命名则需适当给出注释，
+    // 或修改为更语义化的命名
+  export default {
+    name: 'module-name',
+    data () {
+      return {
+        name: '张三',   
+        phone: '13734567623',
+        num: 100,               // 个人购买数
+        totalNum: 3600          // 购买总数
+      }
+    },
+    methods: {
+      // @return {Boolean}
+      checkParams () {
+
       },
-      methods: {
-        // @return {Boolean}
-        checkParams () {
+      // @param {String} name
+      // @desc 修改名称首字母为大写
+      changeWord (name) {
 
-        },
-        // @param {String} name
-        // 修改名称首字母为大写
-        changeWord (name) {
-
-        }
       }
     }
+  }
 
-    ```
+  ```
 
 
 **[⬆ 返回目录](#table-of-contents)**
