@@ -46,7 +46,7 @@
   4. [Git协作开发](#git)
     </br>4.1 [代码日常管理](#4.1)<i style="color: gray"> ---- A</i>
     </br>4.2 [Git提交信息样式指南](#4.2)<i style="color: gray"> ---- A</i>
-    </br>4.3 [Git协作开发流程](#4.3)
+    </br>4.3 [Gitflow工作流](#4.3)
   5. [公共文件](#public)<i style="color: gray"> ---- A</i>
     </br>5.1 [css](#5.1)
     </br>5.2 [js库文件](#5.2)
