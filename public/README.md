@@ -4,54 +4,58 @@
 
 <a name="table-of-contents"></a>
 ## 目录
-  1. [HTML](#html)
+  1. [HTML](#html)<i style="color: gray"> ---- A</i>
     </br>1.1 [HTML5 doctype](#1.1)
     </br>1.2 [字符编码](#1.2)
     </br>1.3 [IE兼容模式](#1.3)
     </br>1.4 [模块功能注释](#1.4)
     </br>1.5 [其他](#1.5)
-  2. [CSS](#css)
+  2. [CSS](#css)<i style="color: gray"> ---- A</i>
     </br>2.1 [样式引入](#2.1)
     </br>2.2 [class命名](#2.2)
     </br>2.3 [属性顺序](#2.3)
     </br>2.4 [其他](#2.4)
   3. [Javascript](#js)
-    </br>3.1 [类型](#types)
-    </br>3.2 [引用](#references)
+    </br>3.1 [类型](#types)<i style="color: gray"> ---- A</i>
+    </br>3.2 [引用](#references)<i style="color: gray"> ---- A</i>
     </br>3.3 [对象](#objects)
     </br>3.4 [数组](#arrays)
     </br>3.5 [解构](#destructuring)
-    </br>3.6 [字符串](#strings)
+    </br>3.6 [字符串](#strings)<i style="color: gray"> ---- A</i>
     </br>3.7 [函数](#functions)
     </br>3.8 [箭头函数](#arrow-functions)
     </br>3.9 [构造函数](#constructors)
     </br>3.10 [模块](#modules)
     </br>3.11 [迭代器和生成器](#iterators-and-generators)
-    </br>3.12 [属性](#properties)
-    </br>3.13 [变量](#variables)
+    </br>3.12 [属性](#properties)<i style="color: gray"> ---- A</i>
+    </br>3.13 [变量](#variables)<i style="color: gray"> ---- A</i>
     </br>3.14 [提升](#hoisting)
-    </br>3.15 [比较运算符和等号](#comparison-operators--equality)
-    </br>3.16 [代码块](#blocks)
-    </br>3.17 [注释](#comments)
-    </br>3.18 [空白](#whitespace)
-    </br>3.19 [逗号](#commas)
-    </br>3.20 [分号](#semicolons)
+    </br>3.15 [比较运算符和等号](#comparison-operators--equality)<i style="color: gray"> ---- A</i>
+    </br>3.16 [代码块](#blocks)<i style="color: gray"> ---- A</i>
+    </br>3.17 [注释](#comments)<i style="color: gray"> ---- A</i>
+    </br>3.18 [空白](#whitespace)<i style="color: gray"> ---- A</i>
+    </br>3.19 [逗号](#commas)<i style="color: gray"> ---- A</i>
+    </br>3.20 [分号](#semicolons)<i style="color: gray"> ---- A</i>
     </br>3.21 [类型转换](#type-casting--coercion)
     </br>3.22 [命名规则](#naming-conventions)
     </br>3.23 [存取器](#accessors)
     </br>3.24 [事件](#events)
-    </br>3.25 [jQuery](#jquery)
-    </br>3.26 [文件引入](#importfile)
-    </br>3.27 [功能模块、数据注释](#datanote)
-  4. [Git代码库](#git)
-    </br>4.1 [代码日常管理](#4.1)
-    </br>4.2 [新功能协作开发流程](#4.2)
-  5. [公共文件](#public)
+    </br>3.25 [jQuery](#jquery)<i style="color: gray"> ---- A</i>
+    </br>3.26 [文件引入](#importfile)<i style="color: gray"> ---- A</i>
+    </br>3.27 [功能模块、数据注释](#datanote)<i style="color: gray"> ---- A</i>
+  4. [Git协作开发](#git)
+    </br>4.1 [代码日常管理](#4.1)<i style="color: gray"> ---- A</i>
+    </br>4.2 [Git提交信息样式指南](#4.2)<i style="color: gray"> ---- A</i>
+    </br>4.3 [Git协作开发流程](#4.3)
+  5. [公共文件](#public)<i style="color: gray"> ---- A</i>
     </br>5.1 [css](#5.1)
     </br>5.2 [js库文件](#5.2)
-  6. [性能与优化](#performance)
-  7. [测试与发布](#test)
+  6. [性能与优化](#performance)<i style="color: gray"> ---- A</i>
+  7. [测试与发布](#test)<i style="color: gray"> ---- A</i>
 
+  > - 标注为`A`的为基础规则
+  >
+  > - 未标注的为推荐规则
 
 <a name="html"></a>
 ## HTML
@@ -149,7 +153,7 @@
 
 - [2.4](#2.4) <a name='2.4'></a>其他
 
-  - 颜色： 16进制颜色用小写字母，能简写的用简写；
+  - 颜色：16进制颜色用小写字母，能简写的用简写；
   - 选择器用小写字母；
   - 小数前的0去掉；
   - 属性值为0的不要单位；
@@ -159,7 +163,7 @@
   - 每个属性声明末尾加分号；
   - 保持必要的缩进；
   - 尽量少使用`inline style`；
-  - 样式重写时注意作用范围，避免污染其他页面
+  - 样式重写时注意作用范围，避免污染其他页面样式
 
 
 **[⬆ 返回目录](#table-of-contents)**
@@ -2078,11 +2082,11 @@
 **[⬆ 返回目录](#table-of-contents)**
 
 <a name="git"></a>
-## GIT代码库
+## Git协作开发
 
 - [4.1](#4.1) <a name='4.1'></a>代码日常管理
 
-  - 每天更新项目代码
+  - 定时更新项目代码
 
     > 防止太久不更新，出现很多的confilct
 
@@ -2096,9 +2100,9 @@
 
   - 查看更新日志（特别关注个人负责的部分）
 
-    > 防止代码被覆盖修改
+    > 防止代码被覆盖修改；
     >
-    > 其实也通过阅读他人代码学习别人的长处
+    > code Review 也是一种学习；
 
     ```js
     // 查看提交日志
@@ -2134,6 +2138,8 @@
     git commit -m "your commit message"
     ```
 
+    详见[Git提交信息样式指南](#4.2)
+
   - 谨慎处理confilct
 
     > 重要代码片段找到相关提交者沟通处理，防止其他人代码丢失
@@ -2145,12 +2151,116 @@
     ```js
     git push remote branchName
     ```
+    
+**[⬆ 返回目录](#table-of-contents)**
+
+
+- [4.2](#4.2) <a name='4.2'></a>Git提交信息样式指南
+
+  - 信息结构
+
+    提交信息由3个不同的部分构成：
+
+    - 标题（必需）
+      - 类型
+      - 主题
+    - 正文（可选）
+    - 注释（可选）
+
+    > 三个部分之间用空行分隔
+  
+  - 标题
+
+    标题的两部分在一行内，要使用英文冒号（:）分隔，即：类型:主题
+  
+    - 类型
+    
+      有固定的分类格式，用来标明修改的种类：
+
+      - feat： 新功能
+      - fix：错误修复
+      - docs：文档修改
+      - style：格式、分号缺失等，代码无变动
+      - refactor：生产代码重构
+      - test：测试添加、测试重构等，生产代码无变动
+      - chore：构建任务更新、程序包管理器配置等，生产代码无变动
+    
+    - 主题
+
+      尽量使用简短的语句描述当前提交的作为。
+      如果使用英文要注意：
+
+      - 主题不超过 50 个字符
+      - 首字母大写
+      - 句末无句号
+      - 使用祈使语气陈述，如：使用 change 而非 changed 或 changes
+  
+  - 正文
+
+    并不是所有的提交信息都复杂到需要正文，因此这是可选内容，仅在提交信息需要一定的解释和语境时使用。
+    需要注意的要点有：
+
+    - 用于解释提交任务的内容和原因，而不是方法。
+    - 使用祈使语气陈述
+    - 如果需要，可加入提交造成的更改的前后对比描述
+    
+    > 多段正文使用空行作分段间隔。
+    > 但是，最好不要写太多的内容，也就不用分段。
+
+  - 注释
+
+    注释是可选内容，只有两种情况：
+
+    - 不兼容变动描述：以 BREAKING CHANGE 开头，描述变动情况、理由和迁移方法
+    - 关闭 issue：注意提供 issue 的 ID
+  
+  - 特殊情况
+
+    如果提交用来撤销以前的提交内容，则格式是固定的：
+
+    - 必需以 revert: 开头，后面紧跟被撤销的提交的完整标题
+    - 正文只有一句：`Revert commit <SHA-code>`（或者中文：撤销提交 <SHA-code>），SHA-code 为被撤销提交的 SHA 标识符
+
+  - 实例
+
+    ```
+    feat: Summarize changes in around 50 characters or less
+
+    More detailed explanatory text, if necessary. Wrap it to about 72
+    characters or so. In some contexts, the first line is treated as the
+    subject of the commit and the rest of the text as the body. The
+    blank line separating the summary from the body is critical (unless
+    you omit the body entirely); various tools like `log`, `shortlog`
+    and `rebase` can get confused if you run the two together.
+    Explain the problem that this commit is solving. Focus on why you
+    are making this change as opposed to how (the code explains that).
+    Are there side effects or other unintuitive consequenses of this
+    change? Here's the place to explain them.
+
+    Further paragraphs come after blank lines.
+
+    - Bullet points are okay, too
+    - Typically a hyphen or asterisk is used for the bullet, preceded
+    by a single space, with blank lines in between, but conventions
+    vary here
+
+    If you use an issue tracker, put references to them at the bottom,
+    like this:
+
+    Resolves: #123
+    See also: #456, #789
+    ```
+
+    **参考资料：**
+
+      [Git 提交信息样式指南](http://www.cielyang.com/Git-commit-message-%E6%A0%B7%E5%BC%8F%E6%8C%87%E5%8D%97/)
+      
 
 
 **[⬆ 返回目录](#table-of-contents)**
 
 
-- [4.2](#4.2) <a name='4.2'></a>新功能协作开发流程
+- [4.3](#4.3) <a name='4.3'></a>新功能协作开发流程
 
 
   > 此流程适用于稳定项目中新功能开发
