@@ -179,7 +179,7 @@
 
   > 引自`Airbnb JavaScript Style`
 
-
+  
   [Airbnb JavaScript Style Guide 中文](https://github.com/yuche/javascript/blob/master/README.md)
 
   [Airbnb JavaScript Style Guide 英文原版](https://github.com/airbnb/javascript/blob/master/README.md)
@@ -2119,81 +2119,100 @@
   > 多人协作，为保证开发效率及新功能代码管理，
   > 采用按功能`新建分支开发`的方式
 
-  - **新建：** 在稳定、干净的develop分支创建新分支
+  `遵循Gitflow工作流` 
 
-    ```
-    git checkout -b newBranchName
-    ```
+  - 功能分支
 
-    新分支命名：
+    每个新功能位于一个自己的分支，这样可以push到中央仓库以备份和协作。但功能分支不是从`master`分支上拉出新分支，而是使用`develop`分支作为父分支。当新功能完成时，合并回`develop`分支。新功能提交应该从不直接与`master`分支交互。
 
-    > newBranchName = 主分支-开发人员-功能（需求）概述
+    **操作步骤**
 
-  - **开发：** 在newBranchName分支进行开发
+    - **新建：** 在稳定、干净的develop分支创建新分支
 
-    add:
+      ```
+      git checkout -b newBranchName
+      ```
 
-    ```js
-    // 添加所有修改的文件
-    git add .
+      新分支命名：
 
-    // or 单文件添加
-    git add path/to/your/fileName
-    ```
+      > newBranchName = 主分支-开发人员-功能（需求）概述
 
-    commit:
-    ```
-    git commit -m "write your commit message here"
-    ```
+    - **开发：** 在newBranchName分支进行开发
 
-    push：
-    ```
-    git push remote HEAD:newBranchName
-    ```
-
-  - **合并：** newBranchName分支开发的功能合并到develop分支
-
-    - 首先：切换到develop分支，并更新develop分支代码，确保其是最新代码
+      add:
 
       ```js
-      // 1 - 切换分支
-      git checkout develop
+      // 添加所有修改的文件
+      git add .
 
-      // 2 - 更新仓库代码
-      git pull remote develop
+      // or 单文件添加
+      git add path/to/your/fileName
       ```
 
-    - 第二步：合并newBranchName分支到develop分支
-
-      ```js
-      // 确保当前是在develop分支
-      git merge remote/newBranchName
+      commit:
+      ```
+      git commit -m "write your commit message here"
       ```
 
-    - 第三步：提交合并结果至远程develop仓库
-
-      > 此处若有conflict提示，可以先处理完冲突，然后依次执行`add` -> `commit` 操作
-
-      **提交**push(提交合并+解决conflict产生的所有更新)：
-
+      push：
       ```
-      git push remote HEAD:develop
+      git push remote HEAD:newBranchName
       ```
 
-  - **删除：** 开发完成，删除新增的分支
+    - **合并：** newBranchName分支开发的功能合并到develop分支
 
-    - 删除远程newBranchName分支
-      ```
-      git push remote :newBranchName
-      ```
+      - 首先：切换到develop分支，并更新develop分支代码，确保其是最新代码
 
-    - 删除本地newBranchName分支
-      ```
-      git branch -D newBranchName
-      ```
-> remote 为远程主机名，一般为 origin
+        ```js
+        // 1 - 切换分支
+        git checkout develop
 
-  [Git Documentation](https://git-scm.com/book/zh/v1/)
+        // 2 - 更新仓库代码
+        git pull remote develop
+        ```
+
+      - 第二步：合并newBranchName分支到develop分支
+
+        ```js
+        // 确保当前是在develop分支
+        git merge remote/newBranchName
+        ```
+
+      - 第三步：提交合并结果至远程develop仓库
+
+        > 此处若有conflict提示，可以先处理完冲突，然后依次执行`add` -> `commit` 操作
+
+        **提交**push(提交合并+解决conflict产生的所有更新)：
+
+        ```
+        git push remote HEAD:develop
+        ```
+
+    - **删除：** 开发完成，删除新增的分支
+
+      - 删除远程newBranchName分支
+        ```
+        git push remote :newBranchName
+        ```
+
+      - 删除本地newBranchName分支
+        ```js
+        git branch -d newBranchName
+
+        // 强制删除 - 将会丢失未合并的修改
+        git branch -d newBranchName
+        ```
+    **Gitflow流程图示**
+
+      ![Gitflow](https://raw.githubusercontent.com/arslanbilal/git-cheat-sheet/master/Img/git-flow-commands-without-flow.png)
+
+      **参考资料：**
+
+      [Git Documentation](https://git-scm.com/book/zh/v1/)
+      
+      [Git Cheat Sheet 中文版](https://github.com/arslanbilal/git-cheat-sheet/blob/master/other-sheets/git-cheat-sheet-zh.md)
+
+      [Git工作流指南：Gitflow工作流](http://blog.jobbole.com/76867/)
 
 
 **[⬆ 返回目录](#table-of-contents)**
@@ -2237,7 +2256,12 @@
   - 使用事件委托，避免过多的DOM元素的事件绑定；
   - 善用浏览器`Performance`工具；
 
-  > [Vue 风格指南](https://cn.vuejs.org/v2/style-guide/)
+
+  
+    
+    [Tinypng](https://tinypng.com/)
+
+    [Vue 风格指南](https://cn.vuejs.org/v2/style-guide/)
 
 
 **[⬆ 返回目录](#table-of-contents)**
