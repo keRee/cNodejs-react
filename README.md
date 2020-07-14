@@ -16,6 +16,17 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
+> .scss失效的问题
+
+在`node_modules`中找到`react-scripts`，修改`config/webpack.config.dev.js`，配置`scss`文件的`loader`配置；
+在`file loader`配置前添加
+```js
+{
+	test: /\.scss$/,
+	loaders: ['style-loader', 'css-loader', 'sass-loader'],
+}
+```
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.<br>
