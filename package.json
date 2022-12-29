@@ -11,7 +11,7 @@
     "react-redux": "^5.0.6",
     "react-router": "^3.2.0",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.0.17",
+    "react-scripts": "5.0.1",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0"
   },
@@ -24,6 +24,6 @@
   "devDependencies": {
     "mockjs": "^1.0.1-beta3",
     "node-sass": "^4.7.2",
-    "sass-loader": "^6.0.6"
+    "sass-loader": "^13.2.0"
   }
 }
